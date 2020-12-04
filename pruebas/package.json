@@ -1,0 +1,22 @@
+{
+  "name": "pruebas",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "directories": {
+    "test": "test"
+  },
+  "scripts": {
+    "test": "\"mocha ./test/*.js --reporter mochawesome --reporter-options autoOpen=false\""
+  },
+  "author": "Diego Osorio",
+  "license": "ISC",
+  "dependencies": {
+    "body-parser": "^1.19.0",
+    "chai": "^4.2.0",
+    "chai-as-promised": "^7.1.1",
+    "chai-http": "^4.3.0",
+    "mocha": "^8.2.0",
+    "mochawesome": "^6.1.1"
+  }
+}

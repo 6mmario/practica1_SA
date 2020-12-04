@@ -1,0 +1,39 @@
+doctype html
+head
+  meta(charset='utf-8')
+  meta(name='viewport' content='width=device-width, initial-scale=1, shrink-to-fit=no')
+  meta(name='description' content='')
+  meta(name='author' content='')
+  title #{title}
+  // Bootstrap core CSS
+  link(href='/bootstrap/bootstrap.min.css' rel='stylesheet')
+  // Custom styles for this template
+  link(href='stylesheets/css/shop-homepage.css' rel='stylesheet')
+
+// Navigation
+nav.navbar.navbar-expand-lg.navbar-dark.bg-dark.fixed-top
+  .container
+    form(method="post" action="/productos")
+      button.navbar-toggler(type='button' data-toggle='collapse' data-target='#navbarResponsive' aria-controls='navbarResponsive' aria-expanded='false' aria-label='Toggle navigation')
+        span.navbar-toggler-icon
+      #navbarResponsive.collapse.navbar-collapse
+      button.btn.btn-lg.btn-secondary.btn-block.btn-login.text-uppercase.font-weight-bold.mb-2(type='submit') Catálogo
+
+section.pricing.py-5
+  .container
+    .row
+      // Free Tier
+      .col-lg-4
+        .card.mb-5.mb-lg-7
+          .card-body
+            a.btn.btn-block.btn-primary.text-uppercase(href='/creauser') Crear user
+      // Plus Tier
+      .col-lg-4
+        .card.mb-5.mb-lg-0
+          .card-body
+            a.btn.btn-block.btn-primary.text-uppercase(href='/creaprod') Crear producto
+      // Pro Tier
+      .col-lg-4
+        .card
+          .card-body
+            a.btn.btn-block.btn-primary.text-uppercase(href='/moduser') Modificar user

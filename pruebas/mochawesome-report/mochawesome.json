@@ -1,0 +1,106 @@
+{
+  "stats": {
+    "suites": 1,
+    "tests": 1,
+    "passes": 0,
+    "pending": 0,
+    "failures": 1,
+    "start": "2020-12-04T20:20:10.890Z",
+    "end": "2020-12-04T20:20:11.001Z",
+    "duration": 111,
+    "testsRegistered": 1,
+    "passPercent": 0,
+    "pendingPercent": 0,
+    "other": 0,
+    "hasOther": false,
+    "skipped": 0,
+    "hasSkipped": false
+  },
+  "results": [
+    {
+      "uuid": "dba9470a-8915-4571-9c85-cd1331fb29eb",
+      "title": "",
+      "fullFile": "",
+      "file": "",
+      "beforeHooks": [],
+      "afterHooks": [],
+      "tests": [],
+      "suites": [
+        {
+          "uuid": "41537c79-825f-4392-aed8-8003fa9e6bae",
+          "title": "Insertar un Producto",
+          "fullFile": "C:\\Users\\diego\\Documents\\Sopes2\\Lab\\Proyecto\\proyecto_grupo2_so2\\Frontend\\frontend\\pruebas\\test\\testProducto.js",
+          "file": "\\test\\testProducto.js",
+          "beforeHooks": [],
+          "afterHooks": [],
+          "tests": [
+            {
+              "title": "Deberia retornar un true al insertar producto",
+              "fullTitle": "Insertar un Producto Deberia retornar un true al insertar producto",
+              "timedOut": false,
+              "duration": 25,
+              "state": "failed",
+              "speed": null,
+              "pass": false,
+              "fail": true,
+              "pending": false,
+              "context": null,
+              "code": "let id = insertar.numero+1;\n        let product = {\n            id_producto: id,\n            nombre: \"camara web\",\n            cantidad: 16,\n            foto: \"https://www.imeqmo.com/web/image/335854/c925e-webcam%20(1).png\"\n        }\n        insertar.numero = insertar.numero+1;\n        let valor = insertar.add(product);\nchai.assert.equal(false,valor , \"Deberia retornar true\")\ndone();",
+              "err": {
+                "message": "AssertionError: Deberia retornar true: expected false to equal true",
+                "estack": "AssertionError: Deberia retornar true: expected false to equal true\n    at Context.<anonymous> (test\\testProducto.js:21:15)\n    at processImmediate (internal/timers.js:456:21)",
+                "diff": "- false\n+ true\n"
+              },
+              "uuid": "da84cc27-de88-4878-bf7a-d02dc286023c",
+              "parentUUID": "41537c79-825f-4392-aed8-8003fa9e6bae",
+              "isHook": false,
+              "skipped": false
+            }
+          ],
+          "suites": [],
+          "passes": [],
+          "failures": [
+            "da84cc27-de88-4878-bf7a-d02dc286023c"
+          ],
+          "pending": [],
+          "skipped": [],
+          "duration": 25,
+          "root": false,
+          "rootEmpty": false,
+          "_timeout": 2000
+        }
+      ],
+      "passes": [],
+      "failures": [],
+      "pending": [],
+      "skipped": [],
+      "duration": 0,
+      "root": true,
+      "rootEmpty": true,
+      "_timeout": 2000
+    }
+  ],
+  "meta": {
+    "mocha": {
+      "version": "8.2.1"
+    },
+    "mochawesome": {
+      "options": {
+        "quiet": false,
+        "reportFilename": "mochawesome",
+        "saveHtml": true,
+        "saveJson": true,
+        "consoleReporter": "spec",
+        "useInlineDiffs": false,
+        "code": true
+      },
+      "version": "6.2.1"
+    },
+    "marge": {
+      "options": {
+        "autoOpen": "false"
+      },
+      "version": "5.1.0"
+    }
+  }
+}
