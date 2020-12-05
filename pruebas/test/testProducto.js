@@ -18,7 +18,7 @@ describe('Insertar un Producto',()=>{
         }
         insertar.numero = insertar.numero+1;
         let valor = insertar.add(product);
-		chai.assert.equal(false,valor , "Deberia retornar true")
+		chai.assert.equal(true,valor , "Deberia retornar true")
 		done();
 	
 	});
