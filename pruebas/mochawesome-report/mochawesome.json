@@ -2,14 +2,14 @@
   "stats": {
     "suites": 1,
     "tests": 1,
-    "passes": 0,
+    "passes": 1,
     "pending": 0,
-    "failures": 1,
-    "start": "2020-12-04T20:20:10.890Z",
-    "end": "2020-12-04T20:20:11.001Z",
-    "duration": 111,
+    "failures": 0,
+    "start": "2020-12-13T16:47:42.325Z",
+    "end": "2020-12-13T16:47:42.617Z",
+    "duration": 292,
     "testsRegistered": 1,
-    "passPercent": 0,
+    "passPercent": 100,
     "pendingPercent": 0,
     "other": 0,
     "hasOther": false,
@@ -18,7 +18,7 @@
   },
   "results": [
     {
-      "uuid": "dba9470a-8915-4571-9c85-cd1331fb29eb",
+      "uuid": "6209884a-f03d-4a88-a3e0-680e614af3e4",
       "title": "",
       "fullFile": "",
       "file": "",
@@ -27,9 +27,9 @@
       "tests": [],
       "suites": [
         {
-          "uuid": "41537c79-825f-4392-aed8-8003fa9e6bae",
+          "uuid": "8d37d885-6d1d-463e-88ec-81e98d799b5b",
           "title": "Insertar un Producto",
-          "fullFile": "C:\\Users\\diego\\Documents\\Sopes2\\Lab\\Proyecto\\proyecto_grupo2_so2\\Frontend\\frontend\\pruebas\\test\\testProducto.js",
+          "fullFile": "C:\\Users\\diego\\Documents\\SoftwareAvanzado\\Lab\\practica1_SA\\pruebas\\test\\testProducto.js",
           "file": "\\test\\testProducto.js",
           "beforeHooks": [],
           "afterHooks": [],
@@ -38,33 +38,29 @@
               "title": "Deberia retornar un true al insertar producto",
               "fullTitle": "Insertar un Producto Deberia retornar un true al insertar producto",
               "timedOut": false,
-              "duration": 25,
-              "state": "failed",
-              "speed": null,
-              "pass": false,
-              "fail": true,
+              "duration": 37,
+              "state": "passed",
+              "speed": "fast",
+              "pass": true,
+              "fail": false,
               "pending": false,
               "context": null,
-              "code": "let id = insertar.numero+1;\n        let product = {\n            id_producto: id,\n            nombre: \"camara web\",\n            cantidad: 16,\n            foto: \"https://www.imeqmo.com/web/image/335854/c925e-webcam%20(1).png\"\n        }\n        insertar.numero = insertar.numero+1;\n        let valor = insertar.add(product);\nchai.assert.equal(false,valor , \"Deberia retornar true\")\ndone();",
-              "err": {
-                "message": "AssertionError: Deberia retornar true: expected false to equal true",
-                "estack": "AssertionError: Deberia retornar true: expected false to equal true\n    at Context.<anonymous> (test\\testProducto.js:21:15)\n    at processImmediate (internal/timers.js:456:21)",
-                "diff": "- false\n+ true\n"
-              },
-              "uuid": "da84cc27-de88-4878-bf7a-d02dc286023c",
-              "parentUUID": "41537c79-825f-4392-aed8-8003fa9e6bae",
+              "code": "let id = insertar.numero+1;\n        let product = {\n            id_producto: id,\n            nombre: \"camara web\",\n            cantidad: 16,\n            foto: \"https://www.imeqmo.com/web/image/335854/c925e-webcam%20(1).png\"\n        }\n        insertar.numero = insertar.numero+1;\n        let valor = insertar.add(product);\nchai.assert.equal(true,valor , \"Deberia retornar true\")\ndone();",
+              "err": {},
+              "uuid": "59b30225-bdbd-4b4d-ba05-3f6999295078",
+              "parentUUID": "8d37d885-6d1d-463e-88ec-81e98d799b5b",
               "isHook": false,
               "skipped": false
             }
           ],
           "suites": [],
-          "passes": [],
-          "failures": [
-            "da84cc27-de88-4878-bf7a-d02dc286023c"
+          "passes": [
+            "59b30225-bdbd-4b4d-ba05-3f6999295078"
           ],
+          "failures": [],
           "pending": [],
           "skipped": [],
-          "duration": 25,
+          "duration": 37,
           "root": false,
           "rootEmpty": false,
           "_timeout": 2000
