@@ -6,6 +6,4 @@ include 'docker'
 
   docker::run{'pruebas':
      image      => 'desog1/practicasa',
-     ports      => ['3000'],
-     expose     => ['8081'],
-  }
+     command    => '-p 3000:8081'
