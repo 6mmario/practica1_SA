@@ -1,10 +1,10 @@
 include 'docker'
 
-  docker::image {'nginx':
+  docker::image {'desog1/practicasa':
      image_tag => 'latest'
   }
 
-  docker::run{'holamundo':
-     image      => 'nginx',
-     ports      => ['8080', '80'],
+  docker::run{'pruebas':
+     image      => 'desog1/practicasa',
+     ports      => ['3000', '8081'],
   }
