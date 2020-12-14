@@ -4,7 +4,7 @@ include 'docker'
      image_tag => 'latest'
   }
 
-  docker::run{'helloworld':
+  docker::run{'holamundo':
      image      => 'nginx',
      ports      => ['8080', '80'],
   }
