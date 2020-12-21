@@ -13,6 +13,6 @@ docker_service 'default' do
   
   docker_container 'produccion' do
     repo 'desog1/practicasa'
-    port '8082:3000'
+    port '8083:3000'
   end
   
