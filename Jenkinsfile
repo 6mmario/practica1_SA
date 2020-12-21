@@ -43,14 +43,7 @@ pipeline {
   stage('Deploy') {
       steps {
           
-          sh '''
-            cp manifest.pp /etc/puppetlabs/code/environments/production/manifests/
-            cp manifestproduction.pp /etc/puppetlabs/code/environments/testing/manifests/
-            '''
-            
-        sh "ssh -n -f diego@35.202.145.123 'sudo /opt/puppetlabs/bin/puppet agent --environment=production --test '"
-        sh "ssh -n -f diego@104.155.190.31 'sudo /opt/puppetlabs/bin/puppet agent --environment=testing --test '"
-     
+      
       }
 
     
