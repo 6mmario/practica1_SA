@@ -13,6 +13,6 @@ docker_service 'default' do
   
   docker_container 'test' do
     repo 'desog1/practicasa'
-    port '8084:3000'
+    port '8081:3000'
   end
   
