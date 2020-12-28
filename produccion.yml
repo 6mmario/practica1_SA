@@ -31,7 +31,18 @@
       become: yes
       apt: update_cache=yes name=docker-ce state=latest
 
-    
+    - name: Stop  containers
+      become: yes
+      shell: docker stop produccion
+      
+      
+    - name: Delete  containers
+      become: yes
+      shell: docker rm produccion
+
+    - name: Delete  Docker image
+      become: yes
+      shell: docker rmi desog1/practicasa
 
     - name: Pull  Docker image
       become: yes
@@ -39,4 +50,4 @@
       
     - name: Create  containers
       become: yes
-      shell: docker run --name produccion -p 8082:3000 -d  analisis2practica3/backendsa:latest
+      shell: docker run --name produccion -p 8082:3000 -d  desog1/practicasa:latest
