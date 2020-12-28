@@ -1,0 +1,53 @@
+- hosts: produccion
+  user: diego
+  vars:
+    create_containers: 1
+    default_container_name: produccion
+    default_container_image: analisis2practica3/backendsa
+    default_container_command: run -p 8082:3000
+  tasks:
+    - name: Install aptitude using apt
+      become: yes
+      apt: name=aptitude state=latest update_cache=yes force_apt_get=yes
+
+    - name: Install required system packages
+      become: yes
+      apt: name={{ item }} state=latest update_cache=yes
+      loop: [ 'apt-transport-https', 'ca-certificates', 'curl', 'software-properties-common', 'python3-pip', 'virtualenv', 'python3-setuptools']
+
+    - name: Add Docker GPG apt Key
+      become: yes
+      apt_key:
+        url: https://download.docker.com/linux/ubuntu/gpg
+        state: present
+
+    - name: Add Docker Repository
+      become: yes
+      apt_repository:
+        repo: deb https://download.docker.com/linux/ubuntu bionic stable
+        state: present
+
+    - name: Update apt and install docker-ce
+      become: yes
+      apt: update_cache=yes name=docker-ce state=latest
+
+    - name: Stop  containers
+      become: yes
+      shell: docker stop produccion
+      
+      
+    - name: Delete  containers
+      become: yes
+      shell: docker rm produccion
+
+    - name: Delete  Docker image
+      become: yes
+      shell: docker rmi desog1/practicasa
+
+    - name: Pull  Docker image
+      become: yes
+      shell: docker pull desog1/practicasa:latest
+      
+    - name: Create  containers
+      become: yes
+      shell: docker run --name produccion -p 8082:3000 -d  analisis2practica3/backendsa:latest
