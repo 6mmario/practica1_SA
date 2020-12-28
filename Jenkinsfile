@@ -42,7 +42,7 @@ pipeline {
   }
   stage('Deploy') {
       steps {
-          ansible-playbook produccion.yml
+         sh ''' ansible-playbook produccion.yml '''
       
       }
 
