@@ -43,7 +43,7 @@ pipeline {
   stage('Deploy') {
       steps {
          sh ''' ansible-playbook produccion.yml '''
-      
+         sh ''' ansible-playbook test.yml '''
       }
 
     

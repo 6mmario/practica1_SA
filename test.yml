@@ -1,8 +1,8 @@
-- hosts: produccion
+- hosts: test
   user: diego
   vars:
     create_containers: 1
-    default_container_name: produccion
+    default_container_name: test
     default_container_image: analisis2practica3/backendsa
     default_container_command: run -p 8082:3000
   tasks:
@@ -31,18 +31,7 @@
       become: yes
       apt: update_cache=yes name=docker-ce state=latest
 
-    - name: Stop  containers
-      become: yes
-      shell: docker stop produccion
-      
-      
-    - name: Delete  containers
-      become: yes
-      shell: docker rm produccion
-
-    - name: Delete  Docker image
-      become: yes
-      shell: docker rmi desog1/practicasa
+    
 
     - name: Pull  Docker image
       become: yes
@@ -50,4 +39,4 @@
       
     - name: Create  containers
       become: yes
-      shell: docker run --name produccion -p 8082:3000 -d  desog1/practicasa:latest
+      shell: docker run --name test -p 8081:3000 -d  desog1/practicasa:latest
